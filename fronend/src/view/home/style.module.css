@@ -1,0 +1,43 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0px;
+  font-family: "Poppins";
+}
+button {
+  background: none;
+  border: none;
+  font-family: "Poppins";
+
+}
+.itemTags {
+  background-color: gray;
+  padding: 0px 7px;
+  align-items: center;
+  border-radius: 100px;
+  display: flex;
+  border: none;
+}
+.contentTags {
+  display: flex;
+  align-items: center;
+  padding: 10px 0px;
+  flex: 1;
+}
+.tagsName {
+  padding-left: 3px;
+  font-size: 12px;
+  color: white;
+  text-transform: capitalize;
+}
+.btnTroli {
+  width: 100%;
+  background-color: blue;
+  height: 35px;
+  border-radius: 4px;
+  color: white;
+}

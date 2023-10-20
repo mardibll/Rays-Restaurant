@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn {
+  border: none;
+  background-color: blue;
+  margin-top: 15px;
+  border-radius: 3px;
+  width: 80px;
+  color: white;
+  height: 30px;
+}
