@@ -17,6 +17,7 @@ export const fetchKategori = () => {
     axios
       .get("http://localhost:5000/categories")
       .then((respon) => {
+       
         dispatch(categorySucces(respon.data));
       })
       .catch((error) => {

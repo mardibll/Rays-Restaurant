@@ -1,5 +1,8 @@
 import axios from "axios";
-
+//url=http://localhost:5000/
+//endpoint=delivery-addresses
+//req body=data yang dikirim seperti data  =>("http://localhost:5000/delivery-addresses", data, )
+//req parameter adalah data yang digabungkan dengan url/endpoint seperti id_address =>(`http://localhost:5000/delivery-addresses/${id_address}`)
 export const address = (Token) => {
   return new Promise((resolve, reject) => {
     axios

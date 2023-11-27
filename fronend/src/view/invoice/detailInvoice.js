@@ -10,6 +10,7 @@ export default function DetailInvoice() {
   const location = useLocation();
   const navigation = useNavigate();
   const id = location.state;
+
   useEffect(() => {
     dispatch(getInvoiceByID(authToken, id));
   }, []);

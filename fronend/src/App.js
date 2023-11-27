@@ -28,7 +28,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Layout
-     
+
         itemTroli={sumTroli}
         setkategori={setkategories}
       >
@@ -47,5 +47,6 @@ export default function App() {
         </Routes>
       </Layout>
     </BrowserRouter>
+
   );
 }

@@ -5,6 +5,7 @@ import Plecholder from "../../component/plecholder";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../redux/action/productAction";
 import { addTroli } from "../../redux/action/actionTroli";
+import { createAction } from "../../constants/action-tyoe";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -17,7 +18,8 @@ export default function Home() {
   const [dataProduct, setdataProduct] = useState([]);
   const [dafaultProduct, setdafaultProduct] = useState([]);
   const [placShow, setplacShow] = useState(true);
-
+  const [statustags, setstatustags] = useState(null);
+  const [statuscategory, setstatuscategory] = useState(null);
   useEffect(() => {
     setTimeout(() => {
       setplacShow(false);
@@ -39,6 +41,7 @@ export default function Home() {
     if (searchItem === "") {
       setdataProduct(dafaultProduct);
     } else {
+      setstatustags(null);
       const filteredData = dafaultProduct?.filter((item) =>
         item.name.toLowerCase().includes(searchItem.toLowerCase())
       );
@@ -58,8 +61,11 @@ export default function Home() {
 
   const filterByCategory = async () => {
     if (filter === "Kategori") {
+      setstatustags(null);
       setdataProduct(dafaultProduct);
     } else {
+      console.log(filter,"DARI");
+      setstatustags(null);
       const filteredData = dafaultProduct.filter(
         (product) => product.category.name === filter
       );
@@ -97,12 +103,19 @@ export default function Home() {
           style={{ display: "flex", alignItems: "center", flexWrap: "wrap" }}
         >
           {productTags.map((is, ix) => {
+            console.log(is);
             return (
               <div key={ix}>
                 <button
                   className={styles.itemTags}
-                  style={{ margin: "0px 5px" }}
-                  onClick={() => filterTags(is?.name, ix)}
+                  style={{
+                    margin: "0px 5px",
+                    backgroundColor: is._id === statustags ? "orange" : "",
+                  }}
+                  onClick={() => {
+                    filterTags(is?.name, ix);
+                    setstatustags(is._id);
+                  }}
                 >
                   <i
                     className="bi bi-tag-fill"
@@ -138,7 +151,14 @@ export default function Home() {
                     <div style={{ display: "flex", paddingTop: 5 }}>
                       {item?.tags.map((i, z) => {
                         return (
-                          <div key={z} className={styles.itemTags}>
+                          <div
+                            key={z}
+                            className={styles.itemTags}
+                            style={{
+                              backgroundColor:
+                                i._id === statustags ? "orange" : "",
+                            }}
+                          >
                             <i
                               className="bi bi-tag-fill"
                               style={{

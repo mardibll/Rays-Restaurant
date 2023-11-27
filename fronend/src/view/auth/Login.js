@@ -11,8 +11,8 @@ export default function Login() {
 
   const navigation = useNavigate();
   const [loginUser, setloginUser] = useState({
-    email: "admin@gmail.com",
-    password: "Admin12$",
+    email: "",
+    password: "",
   });
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -45,11 +45,12 @@ export default function Login() {
         <div className="card-header">Login</div>
         <div style={{ padding: 20 }}>
           <label>Alamat Email</label>
-          <div>
+          <div style={{marginBottom:10}}>
             <Input
               value={loginUser.email}
               onChange={handleChange}
               name={"email"}
+              placeholder={"email"}
             />
           </div>
           <label>Password</label>
@@ -58,6 +59,7 @@ export default function Login() {
               value={loginUser.password}
               onChange={handleChange}
               name={"password"}
+              placeholder={"password"}
             />
             <button style={{ border: 0, background: "none" }}>
               <h4

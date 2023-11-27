@@ -38,6 +38,7 @@ export default function Konfirmasi() {
       const respon = await orderProduct(token, dataInvoice);
       if (respon._id) {
         navigation("/DetailInvoice", { state: respon._id });
+        window.location.reload();
       } else {
         console.log("Gagal Bayar!!!!");
       }

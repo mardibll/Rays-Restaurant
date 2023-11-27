@@ -60,7 +60,7 @@ export default function Checkout() {
               <tr>
                 <th scope="col" className="" />
                 <th scope="col">Nama</th>
-                <th scope="col">Detail</th>
+                <th scope="col">Alamat</th>
               </tr>
             </thead>
             {delivery.map((item, index) => {

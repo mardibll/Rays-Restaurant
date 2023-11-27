@@ -132,7 +132,7 @@ export default function Address() {
               <thead>
                 <tr>
                   <th scope="col">Nama</th>
-                  <th scope="col">Detail</th>
+                  <th scope="col">Alamat</th>
                   <th />
                 </tr>
               </thead>
