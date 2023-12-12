@@ -8,11 +8,7 @@ const register = async (req, res, next) => {
   try {
     let payload = req.body;
     let user = new User(payload);
-    console.log("====================================");
-    console.log(user, "INI USER REGIST");
-    console.log("====================================");
     await user.save();
-    // console.log(user, "INI PAYLOAD");
     return res.json(user);
   } catch (err) {
     if (err && err.name === "ValidationError") {
@@ -25,6 +21,7 @@ const register = async (req, res, next) => {
     next(err);
   }
 };
+
 const localStrategy = async (email, password, done) => {
   try {
     let user = await User.findOne({ email }).select(
