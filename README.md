@@ -1,4 +1,4 @@
-## [Shopefood](https://github.com/mardibll/Shopefood.git
+## [Shopefood](https://github.com/mardibll/Shopefood.git)
 
 The Shopefood application is an application designed simply for users, the aim is to make it easier for users to order food online. so buyers can order food quickly without spending a lot of time.
 
